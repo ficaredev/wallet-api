@@ -1,2 +1,1 @@
-# certificate-api
-Certificate API
+# Certificate API
