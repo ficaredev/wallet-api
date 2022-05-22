@@ -1,5 +1,23 @@
 version: '3'
 services:
+    app:
+        build: .
+        image: app
+        container_name: app
+        environment:
+            DB_HOST: ${DB_HOST}
+            DB_DATABASE: ${DB_DATABASE}
+            DB_USERNAME: ${DB_USERNAME}
+            DB_PASSWORD: ${DB_PASSWORD}
+            DB_PORT: ${DB_PORT}
+
+        depends_on:
+            - mysql
+        networks:
+            - app
+        ports:
+            - "8080:8080"
+
     mysql:
         image: 'mysql:8.0'
         ports:
