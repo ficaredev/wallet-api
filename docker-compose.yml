@@ -4,13 +4,8 @@ services:
         build: .
         image: app
         container_name: app
-        environment:
-            DB_HOST: ${DB_HOST}
-            DB_DATABASE: ${DB_DATABASE}
-            DB_USERNAME: ${DB_USERNAME}
-            DB_PASSWORD: ${DB_PASSWORD}
-            DB_PORT: ${DB_PORT}
-
+        env_file:
+            - .env
         depends_on:
             - mysql
         networks:
