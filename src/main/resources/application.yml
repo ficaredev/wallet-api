@@ -1,7 +1,7 @@
 spring:
   # run application mode
   profiles:
-    active: ${APP_ENV:local}
+    active: ${APP_ENV:test}
 
   # jpa
   jpa:
