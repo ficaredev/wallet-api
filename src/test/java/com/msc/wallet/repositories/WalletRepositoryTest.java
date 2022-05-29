@@ -86,8 +86,7 @@ class WalletRepositoryTest {
 
         Assertions
                 .assertThat(list)
-                .hasSize(0)
-                .doesNotContain(wallet);
+                .isEmpty();
     }
 
     @Test
@@ -119,7 +118,6 @@ class WalletRepositoryTest {
 
         Assertions
                 .assertThat(list)
-                .hasSize(0)
-                .doesNotContain(wallet);
+                .isEmpty();
     }
 }
