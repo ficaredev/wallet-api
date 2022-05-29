@@ -1,12 +1,12 @@
 spring:
   # run application mode
   profiles:
-    active: ${APP_ENV:test}
+    active: ${APP_ENV:local}
 
   # jpa
   jpa:
     open-in-view: false
-    show-sql: true
+    show-sql: false
     hibernate:
       ddl-auto: ${JPA_HIBERNATE_DDL_AUTO:update}
     properties:
@@ -35,6 +35,11 @@ server:
 springdoc:
   api-docs:
     enabled: ${APP_DOCS:true}
-    path: /${APP_DOCS_PATH:docs}
+    path: /docs
   swagger-ui:
-    version: 3
+    path: /swagger.html
+
+# logging
+logging:
+  level:
+    root: ${APP_DEBUG:warn}
