@@ -69,13 +69,7 @@ class WalletRepositoryTest {
 
         Assertions
                 .assertThat(list)
-                .hasSize(1)
-                .filteredOn(object -> object
-                        .getOwner()
-                        .equals(newWallet
-                                .getOwner()) && object
-                        .getOwnerId() == newWallet
-                        .getOwnerId());
+                .hasSize(1);
 
     }
 
