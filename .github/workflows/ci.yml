@@ -3,6 +3,8 @@ name: Continuos Integration
 on:
   pull_request:
     branches: [ develop, master ]
+  push:
+    branches: [ develop, master ]
 
 jobs:
   run-tests:
