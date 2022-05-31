@@ -20,6 +20,7 @@ import java.util.UUID;
 @DisplayName("Wallet repository tests")
 class WalletRepositoryTest {
     static Faker faker = new Faker();
+
     @Autowired
     WalletRepository repository;
 
