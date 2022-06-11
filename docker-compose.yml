@@ -3,7 +3,6 @@ services:
     app:
         build: .
         image: app
-        container_name: app
         env_file:
             - .env
         depends_on:
