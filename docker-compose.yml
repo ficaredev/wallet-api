@@ -1,6 +1,6 @@
 version: '3'
 services:
-    app:
+    wallet:
         build: .
         image: wallet
         env_file:
@@ -8,7 +8,7 @@ services:
         depends_on:
             - mysql
         networks:
-            - app
+            - wallet
         ports:
             - "8080:8080"
 
@@ -23,15 +23,15 @@ services:
             MYSQL_PASSWORD: '${DB_PASSWORD}'
             MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
         volumes:
-            - 'appmysql:/var/lib/mysql'
+            - 'walletmysql:/var/lib/mysql'
         networks:
-            - app
+            - wallet
         healthcheck:
             test: [ "CMD", "mysqladmin", "ping", "-p${DB_PASSWORD}" ]
             retries: 3
             timeout: 5s
 networks:
-    app:
+    wallet:
         driver: bridge
 volumes:
     appmysql:
