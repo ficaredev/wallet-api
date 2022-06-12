@@ -23,7 +23,7 @@ services:
             MYSQL_PASSWORD: '${DB_PASSWORD}'
             MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
         volumes:
-            - 'walletmysql:/var/lib/mysql'
+            - 'mysql:/var/lib/mysql'
         networks:
             - wallet
         healthcheck:
@@ -34,5 +34,5 @@ networks:
     wallet:
         driver: bridge
 volumes:
-    appmysql:
+    mysql:
         driver: local
